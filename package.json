@@ -1,0 +1,19 @@
+{
+  "name": "voicelabyrinth",
+  "version": "1.0.0",
+  "description": "A game of bed time ritual and sleep.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricklon/VoiceLabyrinth.git"
+  },
+  "author": "Rick Anderson",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ricklon/VoiceLabyrinth/issues"
+  },
+  "homepage": "https://github.com/ricklon/VoiceLabyrinth#readme"
+}

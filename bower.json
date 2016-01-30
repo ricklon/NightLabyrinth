@@ -1,0 +1,20 @@
+{
+  "name": "voicelabyrinth",
+  "description": "A game of bed time ritual and sleep.",
+  "main": "app.js",
+  "authors": [
+    "Rick Anderson"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "https://ricklon.github.io/VoiceLabyrinth",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
