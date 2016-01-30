@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/ricklon/VoiceLabyrinth/issues"
   },
-  "homepage": "https://github.com/ricklon/VoiceLabyrinth#readme"
+  "homepage": "https://github.com/ricklon/VoiceLabyrinth#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "serve-favicon": "~2.3.0"
+
+  }
 }
