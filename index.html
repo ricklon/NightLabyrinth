@@ -57,6 +57,12 @@
                 // create a built-in "ground" shape; its constructor takes the same 5 params as the sphere's one
                 var ground = BABYLON.Mesh.CreateGround('ground1', 6, 6, 2, scene);
 
+		// The first parameter can be used to specify which mesh to import. Here we import all meshes
+		BABYLON.SceneLoader.ImportMesh("", "objects/", "jewel.babylon", scene, function (newMeshes) {
+			// Set the target of the camera to the first imported mesh
+			camera.target = newMeshes[0];
+		});
+		
 		var music = new BABYLON.Sound("music", "./sounds/SFX_River_Loop.wav",
 		    scene, null, { loop: true, autoplay: true, spatialSound: true });
 
