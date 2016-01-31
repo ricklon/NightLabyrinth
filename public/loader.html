@@ -36,7 +36,9 @@
         var createScene = function () {
         // This creates a basic Babylon Scene object (non-mesh)
         var scene = new BABYLON.Scene(engine);
-        new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), scene);
+        var light1 = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), scene);
+        light1.diffuse = new BABYLON.Color3(1, 0, 0);
+        light1.specular = new BABYLON.Color3(1, 1, 1);
         var cam = new BABYLON.ArcRotateCamera("ArcRotateCamera", 0, 0, 5, new BABYLON.Vector3(0, 50, 0), scene);
         //var cam = new BABYLON.FreeCamera( "player camera", BABYLON.Vector3.Zero(), scene);
 
@@ -52,6 +54,11 @@
                 position += 10;
             };
 
+          var material = new BABYLON.StandardMaterial("material01", scene);
+          material.diffuseColor = new BABYLON.Color3(0.04, 0.99, 0.19);
+          var ground = BABYLON.Mesh.CreateGround("ground", 100, 100, 2, scene);
+          ground.material = material;
+
           var jewel = loader.addMeshTask("jewel", "", "./objects/", "jewel.obj");
           jewel.onSuccess = pos;
           var jl = loader.addMeshTask("jl", "", "./objects/", "jewel.babylon");
@@ -63,8 +70,23 @@
           var ico2 = loader.addMeshTask("ic02", "", "./objects/", "ico2.obj");
           ico2.onSuccess = pos;
 
-          var Wind = new BABYLON.Sound("Wind", "./sounds/SFX_Wind_Loop.wav", scene, null, { loop: true, autoplay: true });
-          var Blizzard = new BABYLON.Sound("Blizzard", "./sounds/SFX_Blizzard_Loop.wav", scene, null, { loop: true, autoplay: true });
+          var Wind = new BABYLON.Sound("Wind", "./sounds/SFX_Wind_Loop.wav", scene, null, { loop: true, autoplay: false });
+          var Blizzard = new BABYLON.Sound("Blizzard", "./sounds/SFX_Blizzard_Loop.wav", scene, null, { loop: true, autoplay: false });
+          var Chimes = new BABYLON.Sound("Chimes", "./sounds/SFX_Chimes_Loop.wav", scene, null, { loop: true, autoplay: false });
+          var Rain = new BABYLON.Sound("Rain", "./sounds/SFX_Rain_Loop.wav", scene, null, { loop: true, autoplay: false });
+          var River = new BABYLON.Sound("River", "./sounds/SFX_River_Loop.wav", scene, null, { loop: true, autoplay: false });
+          var Thunder = new BABYLON.Sound("Thunder", "./sounds/SFX_Thunder.wav", scene, null, { loop: false, autoplay: false });
+          var WindChimes = new BABYLON.Sound("WindChimes", "./sounds/SFX_WindChimes_Loop.wav", scene, null, { loop: true, autoplay: false });
+          var JewelGlowFshrp = new BABYLON.Sound("JewelGlowFshrp", "./sounds/SFX_JewelGlow_Fshrp_Loop.wav", scene, null, { loop: true, autoplay: false });
+          var JewelGlowGshrp = new BABYLON.Sound("JewelGlowGshrp", "./sounds/SFX_JewelGlow_Gshrp_Loop.wav", scene, null, { loop: true, autoplay: false });
+          var JewelDrop = new BABYLON.Sound("JewelDrop", "./sounds/SFX_JewelDrop.wav", scene, null, { loop: true, autoplay: false });
+          var JewelCollect = new BABYLON.Sound("JewelCollect", "./sounds/SFX_JewelCollect.wav", scene, null, { loop: true, autoplay: false });
+
+
+
+
+
+
 
         //  Wind.attachToMesh(ico2);
         //  Blizzard.attachToMesh(jewel);
